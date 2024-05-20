@@ -5,9 +5,11 @@
 import React from "react";
 import { useGame } from "@/app/(apps)/_features/game/hooks";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function Game() {
-  const { canvasRef, isPlaying, setIsPlaying, score } = useGame();
+  const { canvasRef, isPlaying, setIsPlaying, score, sendJsonMessage, id } =
+    useGame();
 
   return (
     <div className="flex flex-col items-center gap-10">
@@ -21,11 +23,17 @@ export function Game() {
           );
         })}
       </div>
-      <div className="border">
+      <div className={cn("border", id === "1" ? "border-r-0" : "border-l-0")}>
         <canvas ref={canvasRef} height={600} width={800} />
       </div>
       <Button
-        onClick={() => setIsPlaying(!isPlaying)}
+        onClick={() => {
+          setIsPlaying(!isPlaying);
+          sendJsonMessage({
+            action: isPlaying ? "stop" : "start",
+            senderId: "1",
+          });
+        }}
         variant={isPlaying ? "destructive" : "default"}
       >
         {isPlaying ? "Pause" : "Play"}

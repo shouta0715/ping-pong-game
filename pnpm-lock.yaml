@@ -163,6 +163,9 @@ devDependencies:
   prettier:
     specifier: ^3.2.5
     version: 3.2.5
+  react-use-websocket:
+    specifier: ^4.8.1
+    version: 4.8.1(react-dom@18.2.0)(react@18.2.0)
   storybook:
     specifier: ^8.0.9
     version: 8.0.9(react-dom@18.2.0)(react@18.2.0)
@@ -10980,6 +10983,16 @@ packages:
   /react-refresh@0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /react-use-websocket@4.8.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-FTXuG5O+LFozmu1BRfrzl7UIQngECvGJmL7BHsK4TYXuVt+mCizVA8lT0hGSIF0Z0TedF7bOo1nRzOUdginhDw==}
+    peerDependencies:
+      react: '>= 18.0.0'
+      react-dom: '>= 18.0.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: true
 
   /react@18.2.0:
